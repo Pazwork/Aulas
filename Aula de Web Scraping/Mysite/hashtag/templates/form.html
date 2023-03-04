@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Trending Instagram</title>
+    <style>
+        body {
+            background-color: #FAFAFA;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            background-color: #FFF;
+            border: 1px solid #E6E6E6;
+            box-shadow: 0px 0px 10px 1px #E6E6E6;
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            border: 1px solid #E6E6E6;
+            font-size: 16px;
+            padding: 10px;
+            width: 95%;
+        }
+        input[type="submit"] {
+            background-color: #3897f0;
+            border: none;
+            color: #FFF;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #3476c7;
+        }
+
+        .div-form{
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .div-selector {
+            margin: auto;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h1>Trending Instagram</h1>
+        <div class="div-form">
+            <div class="div-selector">
+                <label for="tipo1">Hashtag:
+                    <input type="radio" id="tipo1" name="seletor" value="hashtag">
+                </label>
+                <label for="tipo2">Profile:
+                    <input type="radio" id="tipo2" name="seletor" value="profile">
+                </label>
+            </div>
+            <br>
+            <label>
+                Digite o que Deseja Pesquisar:
+            </label>
+            <input type="text" id="palavra" name="palavra">
+        </div>
+        </br></br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
